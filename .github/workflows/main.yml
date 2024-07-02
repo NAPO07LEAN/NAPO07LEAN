@@ -1,0 +1,41 @@
+#Word guessing game
+
+import random as rand
+
+print("WELCOME TO WORD GUESS!!!!!!\n")
+a=input("what's your name???\n")
+print("\nGOOD LUCK",a,"\n")
+print("you have 10 guesses\n")
+
+fruits=["apple","bannana","mango","orange"]
+names=["rahul","ram","shyam","arsh",a]
+o=[[fruits] , [names]]
+b=rand.choice(rand.choice(rand.choice(o)))
+
+d=list(b)
+q=[]
+
+for i  in range(0,len(d)):
+    q=q+["_"]
+
+def PRINT(q):
+    l=-1
+    for n in q:
+        l=l+1
+        print(q[l])
+
+
+
+while q!=d:
+    z=input("guess:")
+    p=-1
+    if z in d:
+        for w in d:
+            p=p+1
+            if d[p]==z:
+                q[p]=z
+        PRINT(q)
+    else:
+        PRINT(q)
+
+print("congrats u win")
